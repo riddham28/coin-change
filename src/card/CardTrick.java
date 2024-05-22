@@ -86,3 +86,20 @@ class Card {
         return value + " of " + suit;
     }
 }
+// Hard-coded lucky card
+Card luckyCard = new Card(7, "Hearts");
+
+// Search for the lucky card
+boolean found = false;
+for (Card card : magicHand) {
+    if (card.getValue() == luckyCard.getValue() && card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+        found = true;
+        break;
+    }
+}
+
+if (found) {
+    System.out.println("Your lucky card is in the magic hand! You win!");
+} else {
+    System.out.println("Your lucky card is not in the magic hand. You lose.");
+}
